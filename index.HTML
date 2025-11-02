@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal AI Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">🤖</div>
+            <div class="greeting">Hi there! 👋</div>
+            <button class="header-btn" onclick="clearChat()" title="New Chat">🔄</button>
+            <button class="header-btn" onclick="showSettingsModal()" title="Settings">⚙</button>
+        </div>
+
+        <div class="chat-area" id="chatArea">
+            <div class="welcome-message">
+                Start a conversation or try the quick actions below!
+            </div>
+        </div>
+
+        <div class="quick-actions" id="quickActions">
+            <button class="action-btn primary" onclick="sendQuickMessage('Help me brainstorm ideas')">💡 Brainstorm Ideas</button>
+            <button class="action-btn secondary" onclick="sendQuickMessage('Tell me something interesting')">✨ Surprise Me</button>
+            <button class="action-btn tertiary" onclick="sendQuickMessage('Help me learn something new')">📚 Learn</button>
+            <button class="action-btn primary" onclick="sendQuickMessage('Write a creative story')">📝 Create</button>
+        </div>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." 
+                       onkeypress="handleKeyPress(event)">
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Settings</h3>
+                <button class="close-btn" onclick="closeModal('settingsModal')">×</button>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Gemini API Key</h4>
+                <input type="password" class="modal-input" id="apiKeyInput" placeholder="Enter your Gemini API Key">
+                <button class="modal-btn" onclick="saveApiKey()">Save API Key</button>
+                <p class="error-message" id="apiError"></p>
+                <p class="success-message" id="apiSuccess"></p>
+                <p style="color: #888; font-size: 12px; margin-top: 10px;">
+                    Get your API key from: 
+                    <a href="https://makersuite.google.com/app/apikey" target="_blank" style="color: #c4f547;">Google AI Studio</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

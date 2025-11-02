@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Personal AI Buddy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">🤖</div>
+            <div class="greeting">Welcome to Personal AI Buddy! 👋</div>
+        </div>
+
+        <div class="welcome-content">
+            <div class="welcome-message">
+                <h1>Hi there!</h1>
+                <p>I'm your AI buddy, ready to chat and help with anything you need.</p>
+                <button class="proceed-btn" onclick="proceedToChat()">Proceed to Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <img src="elements/loading.gif" alt="Loading..." class="loading-gif">
+    </div>
+
+    <script>
+        function proceedToChat() {
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.style.display = 'flex';
+            setTimeout(() => {
+                window.location.href = 'index.HTML';
+            }, 2000); // 2 second delay for loading animation
+        }
+    </script>
+</body>
+</html>
